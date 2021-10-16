@@ -45,7 +45,7 @@ def application(environ, start_response):
         if file_key != key:
                 return ["error: Mimatch network flow".encode("utf-8")]
 
-        shell = "/home/netsys/1.createRepository.sh " + name
+        shell = "./createRepository.sh " + name
         proc = subprocess.run(shell, shell=True, stdout=PIPE, stderr=PIPE, text=True)
 
         if proc.stdout.find("error") >= 0:
